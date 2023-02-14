@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <HTA:APPLICATION ID="oHTA"
+    APPLICATIONNAME="myApp"
+    BORDER="thick"
+    BORDERSTYLE="normal"
+    CAPTION="yes"
+    ICON=""
+    MAXIMIZEBUTTON="yes"
+    MINIMIZEBUTTON="yes"
+    SHOWINTASKBAR="yes"
+    SINGLEINSTANCE="yes"
+    SYSMENU="yes"
+    VERSION="1.0"
+    WINDOWSTATE="maximize" />
+
+    <title>Test</title>
+    <script lang="JavaScript">
+        function teste() {
+            document.getElementById("divDisplay").innerHTML="!!!"
+            wsh = new ActiveXObject("WScript.Shell");
+            var wshOut = wsh.exec("..\\build\\readdyp.exe").StdOut;
+            document.getElementById("divDisplay").innerHTML = wshOut.ReadAll();
+        }
+    </script>
+</head>
+<body onload="teste()">
+    <div id="divDisplay"></div>
+</body>
+</html>
